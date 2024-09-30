@@ -1,10 +1,22 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import "./styles/index.css"
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+import { Provider } from "jotai"
+import * as React from "react"
+import ReactDOM from "react-dom/client"
+import { RouterProvider } from "react-router-dom"
+
+import { jotaiStore } from "./lib/jotai"
+import { SettingSync } from "./providers/setting-sync"
+import { router } from './router'
+
+
+const $container = document.querySelector("#root") as HTMLElement
+
+ReactDOM.createRoot($container).render(
+  <React.StrictMode>
+    <Provider store={jotaiStore}>
+      <SettingSync />
+      <RouterProvider router={router} />
+    </Provider>
+  </React.StrictMode>,
 )

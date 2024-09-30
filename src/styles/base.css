@@ -1,0 +1,12 @@
+html{
+  --fo-font-family: 'Onest Variable', sans-serif;
+}
+
+body,
+#root {
+  @apply h-screen;
+  @apply cursor-default;
+
+  overscroll-behavior: none;
+}
+
