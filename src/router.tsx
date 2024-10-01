@@ -1,9 +1,9 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import App from "./App";
 import { NotFound } from "./components/common/NotFound";
-import Container from "./pages/container";
-import Home from "./pages/home";
+import { Activity } from "./pages/activity";
+import { Dashboard } from "./pages/dashboard";
 
 const routes = [
   {
@@ -14,13 +14,15 @@ const routes = [
     children: [
       {
         path: "/",
-        element: <Home />,
-        children: [
-          {
-            path: '/',
-            element: <Container />
-          },
-        ]
+        element: <Navigate to="/dashboard" />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/activity",
+        element: <Activity />,
       },
     ],
   },
