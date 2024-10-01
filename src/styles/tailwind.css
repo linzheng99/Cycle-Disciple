@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+
   :root,
   html {
     --radius: 0.5rem;
@@ -47,7 +48,14 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply text-theme-foreground;
+  }
+}
+
+@layer components {
+  .center {
+    @apply flex items-center justify-center;
   }
 }

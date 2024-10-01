@@ -5,6 +5,7 @@ export function Menu() {
     <nav className="flex items-center gap-4">
       <Link to="/dashboard">Dashboard</Link>
       <Link to="/activity">Activity</Link>
+      <Link to="/profile">Profile</Link>
     </nav>
   )
 }

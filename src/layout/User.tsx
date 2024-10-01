@@ -1,7 +1,7 @@
 import * as Avatar from "@radix-ui/react-avatar";
 import React from "react";
 
-const UserAvatar = () =>
+export const UserAvatar = () =>
   <Avatar.Root className="bg-blackA1 inline-flex size-[45px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
     <Avatar.Image
       className="size-full rounded-[inherit] object-cover"

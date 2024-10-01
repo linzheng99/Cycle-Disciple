@@ -4,6 +4,7 @@ import App from "./App";
 import { NotFound } from "./components/common/NotFound";
 import { Activity } from "./pages/activity";
 import { Dashboard } from "./pages/dashboard";
+import { Profile } from "./pages/profile";
 
 const routes = [
   {
@@ -23,6 +24,10 @@ const routes = [
       {
         path: "/activity",
         element: <Activity />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
       },
     ],
   },
