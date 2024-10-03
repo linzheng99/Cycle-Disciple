@@ -28,6 +28,13 @@ export const routes: IRouteItem[] = [
     errorElement: <NotFound />,
     children: [
       {
+        path: "/",
+        element: <Dashboard />,
+        meta: {
+          isCheck: true
+        }
+      },
+      {
         path: "/dashboard",
         element: <Dashboard />,
         meta: {

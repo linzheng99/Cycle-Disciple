@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 import { matchRoutes, useLocation, useNavigate } from "react-router-dom";
 
+import { getLocalStorage } from "~/lib/local";
+
 import { routes } from "./index";
 
 const GuardRoute = ({ children }: any) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const token = localStorage.getItem("access_token") || "";
+  const token = getLocalStorage("access_token");
   const mathchs = matchRoutes(routes, location);
 
   const isExist = mathchs?.some((item) => item.pathname === location.pathname);
