@@ -7,7 +7,7 @@ import { RouterProvider } from "react-router-dom"
 
 import { jotaiStore } from "./lib/jotai"
 import { SettingSync } from "./providers/setting-sync"
-import { router } from './router'
+import { router } from './routes'
 
 
 const $container = document.querySelector("#root") as HTMLElement
