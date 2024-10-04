@@ -108,7 +108,7 @@ export default {
 
       collections: {
         ...getIconCollections(["mingcute", "simple-icons", "logos"]),
-        local: getCollections(path.resolve(__dirname, "./src/icons/local")),
+        local: getCollections(path.resolve(__dirname, "./src/assets/icons/local")),
       }
     })
   ],

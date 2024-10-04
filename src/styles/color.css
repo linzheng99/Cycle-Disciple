@@ -1,5 +1,5 @@
 [data-theme="light"] {
-  --fo-a: 21.6 100% 50%;
+  --fo-a: 15 82% 53%;
 
   --fo-vibrancy-background: theme(colors.native.active);
   --fo-vibrancy-foreground: 0 0% 45%;
@@ -23,7 +23,7 @@
 }
 
 [data-theme="dark"] {
-  --fo-a: 21.6 100% 50%;
+  --fo-a: 15 82% 53%;
 
   --fo-vibrancy-foreground: 0 0% 83%;
   --fo-vibrancy-background: theme(colors.native.active);
