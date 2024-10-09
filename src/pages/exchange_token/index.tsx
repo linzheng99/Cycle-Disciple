@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { setLocalStorage } from "~/lib/local";
-import { useUserStore } from "~/store";
+import { buildUserInfo , useUserStore } from "~/store";
 
 export function ExchangeToken() {
   const [search] = useSearchParams();
@@ -21,7 +21,7 @@ export function ExchangeToken() {
         grant_type: 'authorization_code',
       }
     })
-    store.setUser({ name: `${athlete.firstname} ${athlete.lastname}`, id: athlete.id, weight: athlete.weight, city: athlete.city, country: athlete.country })
+    store.setUser(buildUserInfo(athlete))
 
     setLocalStorage('access_token', access_token)
     setLocalStorage('refresh_token', refresh_token)

@@ -1,9 +1,11 @@
+import type { IStravaUser } from '~/types'
+
 import { apiFetch } from '../lib/fetch'
 
 export interface IAllRideTotals {
   count: number
-  elapsed_time:number
-  elevation_gain:number
+  elapsed_time: number
+  elevation_gain: number
   distance: number
   moving_time: number
 }
@@ -21,4 +23,11 @@ export async function getAthletesStats(id: number): Promise<IStats> {
     all_ride_totals,
     ytd_ride_totals
   }
+}
+
+export async function getAthleteInfo(): Promise<IStravaUser> {
+  const res = await apiFetch('/athlete', {
+    method: 'GET',
+  })
+  return res
 }

@@ -1,12 +1,7 @@
 import { create } from 'zustand';
 
-interface IUser {
-  id: number
-  name: string
-  weight?: number
-  city?: string
-  country?: string
-}
+import type { IStravaUser, IUser } from '~/types';
+
 
 interface UserState {
   user: IUser | null;
@@ -18,3 +13,13 @@ export const useUserStore = create<UserState>((set) => ({
   setUser: (user) => set({ user }),
 }));
 
+
+export function buildUserInfo(athlete: IStravaUser): IUser {
+  return {
+    id: athlete.id,
+    name: `${athlete.firstname  } ${  athlete.lastname}`,
+    weight: athlete.weight,
+    city: athlete.city,
+    country: athlete.country,
+  }
+}

@@ -16,3 +16,21 @@ export interface IActivity {
   max_heartrate: number
   achievement_count: number
 }
+
+export interface IStravaUser {
+  id: number
+  name: string
+  firstname: string
+  lastname: string
+  weight?: number
+  city?: string
+  country?: string
+}
+
+export interface IUser {
+  id: number
+  name: string
+  weight?: number
+  city?: string
+  country?: string
+}

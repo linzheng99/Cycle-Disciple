@@ -1,4 +1,3 @@
-
 import dayjs from "dayjs"
 
 import type { IActivity } from "~/types"
@@ -38,11 +37,11 @@ export function ActivityCard({ activity }: Props) {
             {`${activity.total_elevation_gain}m`}
           </p>
           <p className='center rounded-xl border px-1 text-sm'>
-            <i className='i-mingcute-lightning-fill' />
+            <i className='i-mingcute-lightning-line' />
             {`${activity.average_watts ? `${activity.average_watts.toFixed(0)}w` : '??'}`}
           </p>
           <p className='center rounded-xl border px-1 text-sm'>
-            <i className='i-mingcute-heartbeat-2-fill' />
+            <i className='i-mingcute-heartbeat-2-line' />
             {`${activity.average_heartrate ? `${activity.average_heartrate.toFixed(0)}bpm` : '??'}`}
           </p>
         </div>

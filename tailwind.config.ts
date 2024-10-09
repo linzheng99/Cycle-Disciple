@@ -12,96 +12,98 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        theme: "var(--fo-font-family)",
-        default: "Onest Variable, sans-serif;",
-      },
-      colors: {
-        border: "hsl(var(--border) / <alpha-value>)",
-        background: "hsl(var(--background) / <alpha-value>)",
-        foreground: "hsl(var(--foreground) / <alpha-value>)",
-
-        destructive: {
-          DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
-          foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted) / <alpha-value>)",
-          foreground: "hsl(var(--muted-foreground) / <alpha-value>)",
-        },
-        accent: "hsl(var(--fo-a) / <alpha-value>)",
-
-        popover: {
-          DEFAULT: "hsl(var(--popover) / <alpha-value>)",
-          foreground: "hsl(var(--popover-foreground) / <alpha-value>)",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card) / <alpha-value>)",
-          foreground: "hsl(var(--card-foreground) / <alpha-value>)",
-        },
-        native: {
-          DEFAULT: "hsl(var(--fo-native) / <alpha-value>)",
-          active: "hsl(var(--fo-native-active) / <alpha-value>)",
-        },
-
-        theme: {
-          // https://uicolors.app/create
-          accent: {
-            DEFAULT: "hsl(var(--fo-a) / <alpha-value>)",
-            50: "#fef4ee",
-            100: "#fce7d8",
-            200: "#f8ccb0",
-            300: "#f4a77d",
-            400: "#ee7949",
-            500: "#ea5725",
-            600: "#db3e1b",
-            700: "#b62d18",
-            800: "#91261b",
-            900: "#752219",
-            950: "#3f0e0b",
-          },
-
-          vibrancyFg: "hsl(var(--fo-vibrancy-foreground) / <alpha-value>)",
-          vibrancyBg: "var(--fo-vibrancy-background)",
-
-          item: {
-            active: "var(--fo-item-active)",
-            hover: "var(--fo-item-hover)",
-          },
-
-          inactive: "hsl(var(--fo-inactive) / <alpha-value>)",
-          disabled: "hsl(var(--fo-disabled) / <alpha-value>)",
-
-          foreground: "hsl(var(--fo-text-primary) / <alpha-value>)",
-          background: "var(--fo-background)",
-
-          "foreground-hover": "hsl(var(--fo-text-primary-hover) / <alpha-value>)",
-
-          modal: {
-            background: "var(--fo-modal-background)",
-            "background-opaque": "var(--fo-modal-background-opaque)",
-          },
-          button: {
-            hover: "var(--fo-button-hover)",
-          },
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
-      },
-
-      typography: (theme) => ({
-        zinc: {
-          css: {
-            "--tw-prose-body": theme("colors.zinc.500"),
-            "--tw-prose-quotes": theme("colors.zinc.500"),
-          },
-        },
-      }),
-    },
+  	extend: {
+  		fontFamily: {
+  			theme: 'var(--fo-font-family)',
+  			default: 'Onest Variable, sans-serif;'
+  		},
+  		colors: {
+  			border: 'hsl(var(--border))',
+  			background: 'hsl(var(--background))',
+  			foreground: 'hsl(var(--foreground))',
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			native: {
+  				DEFAULT: 'hsl(var(--fo-native) / <alpha-value>)',
+  				active: 'hsl(var(--fo-native-active) / <alpha-value>)'
+  			},
+  			theme: {
+  				accent: {
+  					'50': '#fef4ee',
+  					'100': '#fce7d8',
+  					'200': '#f8ccb0',
+  					'300': '#f4a77d',
+  					'400': '#ee7949',
+  					'500': '#ea5725',
+  					'600': '#db3e1b',
+  					'700': '#b62d18',
+  					'800': '#91261b',
+  					'900': '#752219',
+  					'950': '#3f0e0b',
+  					DEFAULT: 'hsl(var(--fo-a) / <alpha-value>)'
+  				},
+  				vibrancyFg: 'hsl(var(--fo-vibrancy-foreground) / <alpha-value>)',
+  				vibrancyBg: 'var(--fo-vibrancy-background)',
+  				item: {
+  					active: 'var(--fo-item-active)',
+  					hover: 'var(--fo-item-hover)'
+  				},
+  				inactive: 'hsl(var(--fo-inactive) / <alpha-value>)',
+  				disabled: 'hsl(var(--fo-disabled) / <alpha-value>)',
+  				foreground: 'hsl(var(--fo-text-primary) / <alpha-value>)',
+  				background: 'var(--fo-background)',
+  				'foreground-hover': 'hsl(var(--fo-text-primary-hover) / <alpha-value>)',
+  				modal: {
+  					background: 'var(--fo-modal-background)',
+  					'background-opaque': 'var(--fo-modal-background-opaque)'
+  				},
+  				button: {
+  					hover: 'var(--fo-button-hover)'
+  				}
+  			},
+  			primary: {
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			secondary: {
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			chart: {
+  				'1': 'hsl(var(--chart-1))',
+  				'2': 'hsl(var(--chart-2))',
+  				'3': 'hsl(var(--chart-3))',
+  				'4': 'hsl(var(--chart-4))',
+  				'5': 'hsl(var(--chart-5))'
+  			}
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		typography: '(theme) => ({\n        zinc: {\n          css: {\n            "--tw-prose-body": theme("colors.zinc.500"),\n            "--tw-prose-quotes": theme("colors.zinc.500"),\n          },\n        },\n      })'
+  	}
   },
   plugins: [
     iconsPlugin({
@@ -110,8 +112,9 @@ export default {
         ...getIconCollections(["mingcute", "simple-icons", "logos"]),
         local: getCollections(path.resolve(__dirname, "./src/assets/icons/local")),
       }
-    })
-  ],
+    }),
+      require("tailwindcss-animate")
+],
 }
 
 function getCollections(dir: string) {

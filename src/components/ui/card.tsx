@@ -1,36 +1,76 @@
-import { cloneElement } from "react"
+import * as React from "react"
 
-export interface ICardData {
-  title: string
-  icon: React.JSX.Element
-  count: number | string
-}
+import { cn } from "@/lib/utils"
 
-interface Props {
-  data: ICardData[]
-}
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-xl border bg-card text-card-foreground shadow",
+      className
+    )}
+    {...props}
+  />
+))
+Card.displayName = "Card"
 
-export function Card(props: Props) {
-  const { data } = props
-  return (
-    <>
-      {
-        data.map(item => {
-          return (
-            <div className="rounded-xl border bg-card text-card-foreground shadow" key={item.title}>
-              <div className="flex flex-row items-center justify-between space-y-0 p-6 pb-2">
-                <h3>
-                  {item.title}
-                </h3>
-                {cloneElement(item.icon, { className: `size-4 ${item.icon.props.className}` })}
-              </div>
-              <div className="p-6 pt-0">
-                <span className="text-2xl font-bold"> {item.count} </span>
-              </div>
-            </div>
-          )
-        })
-      }
-    </>
-  )
-}
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+))
+CardHeader.displayName = "CardHeader"
+
+const CardTitle = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h3
+    ref={ref}
+    className={cn("font-semibold leading-none tracking-tight", className)}
+    {...props}
+  />
+))
+CardTitle.displayName = "CardTitle"
+
+const CardDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+))
+CardDescription.displayName = "CardDescription"
+
+const CardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+))
+CardContent.displayName = "CardContent"
+
+const CardFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-6 pt-0", className)}
+    {...props}
+  />
+))
+CardFooter.displayName = "CardFooter"
+
+export { Card, CardContent,CardDescription, CardFooter, CardHeader, CardTitle }
